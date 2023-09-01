@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "vigilert-app",
+    "slug": "vigilert-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Images/vigilert-icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/Images/vigilert-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/Images/vigilert-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/Images/vigilert-icon.png"
+    }
+  }
+}
