@@ -1,16 +1,3 @@
-// TODO: Refactor image paths to use dynamic imports or create a helper function
-// TODO: Personalize onboarding screen titles and images to align with my app's branding
-// TODO: Implement logic to navigate to the next screen when the "Get Started" button is tapped
-// TODO: Style the onboarding screens to match my app's design and theme
-// TODO: Incorporate additional animations or transitions to enhance the user experience
-// TODO: Integrate localization for text content to ensure support for multiple languages
-// TODO: Handle potential errors, such as missing images or failed animations, gracefully
-// TODO: Conduct thorough testing of the Welcome screen across various devices and orientations to ensure responsiveness
-// TODO: Enhance accessibility features, including screen reader compatibility and effective focus management
-// TODO: Optimize image sizes and loading processes to boost performance and minimize load times
-// TODO: Integrate analytics or event tracking to monitor user interactions on the onboarding screens
-
-
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, Animated } from 'react-native';
 import Swiper from 'react-native-swiper';
@@ -27,9 +14,9 @@ const Welcome = () => {
   // Get the navigation object
   const navigation = useNavigation();
   const onboardingScreens = [
-    { title: 'Welcome to vocaverse', image: 'vigilert' },
-    { title: 'Learn a language', image:'emergency_response' },
-    { title: 'Right from home', image: 'community_safety' },
+    { title: 'Welcome to VocaVerse', image: 'anime1' },
+    { title: 'Diverse Language Learning', image:'anime2' },
+    { title: 'Explore Global Cultures', image: 'anime3' },
   ];
   const handleSlideChange = (index) => {
     setShowButton(index === onboardingScreens.length - 1);
@@ -92,8 +79,8 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    top: 90, // Adjust the distance from the top as needed
-    right: 20, // Adjust the distance from the right as needed
+    top: 650, // Adjust the distance from the top as needed
+    right: 100, // Adjust the distance from the right as needed
   },
 
   getStartedButton: {

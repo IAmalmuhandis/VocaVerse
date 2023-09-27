@@ -16,24 +16,47 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = () => {
+    if (!email || !password) {
+      setPopupMessage('Please fill in all fields');
+      setPopupType('error');
+      setPopupVisible(true);
+      return;
+    }
+
+
+
     setIsLoading(true);
+    // Simulate registration success
     // Simulate registration success
     setTimeout(() => {
       setIsLoading(false);
-      setPopupMessage('Login successful!');
-      setPopupType('success');
+      
+      // Check if registration was successful
+      const loginSuccessful = true; // Replace with your actual registration logic
+      
+      if (loginSuccessful) {
+        setPopupMessage('Login Successful!');
+        setPopupType('success');
+      } else {
+        setPopupMessage('Login failed. Please try again.');
+        setPopupType('error');
+      }
+  
       setPopupVisible(true);
-
+  
       // Navigate to the next screen upon successful registration
       // You can use navigation library like React Navigation
     }, 2000);
   };
-  const handleAlreadyHaveAnAccount = () => {
+  const handleDontHaveAccount = () => {
     navigation.navigate('Register');
   
   };
   const closePopup = () => {
     setPopupVisible(false);
+    if(popupType == 'success')
+      navigation.navigate('Dashboard');
+ 
   };
   return (
     <View style={styles.container}>
@@ -66,7 +89,7 @@ const Login = () => {
           <Text style={styles.buttonText}>Login</Text>
         )}
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleAlreadyHaveAnAccount} style={styles.alreadyHaveAccount}>
+      <TouchableOpacity onPress={handleDontHaveAccount} style={styles.alreadyHaveAccount}>
         <Text style={styles.alreadyHaveAccountText}>Don't have an account? Sign up</Text>
       </TouchableOpacity>
       <PopupHelper
@@ -74,6 +97,7 @@ const Login = () => {
         message={popupMessage}
         type={popupType}
         onClose={closePopup}
+        screen={'Login'}
       />
     </View>
   );
@@ -107,7 +131,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   buttonText: {
-    color: classes.tertiaryColor,
+    color: classes.secondaryColor,
     fontSize: 18,
     fontWeight: 'bold',
   },

@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "vigilert-app",
+    "name": "VocaVerse",
     "slug": "vigilert-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Images/vigilert-icon.png",
+    "icon": "./assets/Images/anime-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/Images/vigilert-icon.png",
+      "image": "./assets/Images/anime-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/Images/vigilert-icon.png",
+        "foregroundImage": "./assets/Images/anime-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.iamalmuhandis.vigilertapp"
     },
     "web": {
-      "favicon": "./assets/Images/vigilert-icon.png"
+      "favicon": "./assets/Images/anime-icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ded65d4d-ccaf-441e-8c55-d557ac9685f4"
+      }
     }
   }
 }

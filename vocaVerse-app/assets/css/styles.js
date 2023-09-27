@@ -4,12 +4,15 @@ const classes = {
   primaryColor: '#E9B44C',
   secondaryColor: '#1C110A',
   tertiaryColor: '#E8E1EF',
+  successColor: '#008000',
+  errorColor: 'red'
 };
 
 const styles = StyleSheet.create({
     header: {
-        backgroundColor: classes.primaryColor,
-        padding: 20,
+        backgroundColor: classes.secondaryColor,
+        paddingVertical: 40,
+        paddingHorizontal: 40,
         borderRadius: 10,
         marginBottom: 100,
         shadowColor: '#000',
@@ -21,7 +24,7 @@ const styles = StyleSheet.create({
       heading: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: 'white',
+        color: classes.primaryColor,
         textAlign: 'center',
       },
   // Add other styles here

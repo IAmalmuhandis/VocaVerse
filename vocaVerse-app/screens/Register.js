@@ -15,25 +15,52 @@ const Register = () => {
    // Get the navigation object
    const navigation = useNavigation();
   
-  const handleRegister = () => {
+   const handleRegister = () => {
+    // Check if any field is empty
+    if (!name || !email || !password) {
+      setPopupMessage('Please fill in all fields');
+      setPopupType('error');
+      setPopupVisible(true);
+      return;
+    }
+  
+    // Implement more specific validation logic if needed
+    // For example, check if the email is in a valid format
+  
     setIsLoading(true);
+  
     // Simulate registration success
     setTimeout(() => {
       setIsLoading(false);
-      setPopupMessage('Registration successful!');
-      setPopupType('success');
+      
+      // Check if registration was successful
+      const registrationSuccessful = true; // Replace with your actual registration logic
+      
+      if (registrationSuccessful) {
+        setPopupMessage('Registration successful!');
+        setPopupType('success');
+      } else {
+        setPopupMessage('Registration failed. Please try again.');
+        setPopupType('error');
+      }
+  
       setPopupVisible(true);
-
+  
       // Navigate to the next screen upon successful registration
       // You can use navigation library like React Navigation
     }, 2000);
   };
+  
   const handleAlreadyHaveAnAccount = () => {
     navigation.navigate('Login');
   
   };
   const closePopup = () => {
     setPopupVisible(false);
+    if(popupType == 'success'){
+      navigation.navigate('Login');
+    }
+   
   };
   return (
     <View style={styles.container}>
@@ -80,6 +107,7 @@ const Register = () => {
         message={popupMessage}
         type={popupType}
         onClose={closePopup}
+        screen={'Register'}
       />
     </View>
   );
@@ -113,7 +141,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   buttonText: {
-    color: classes.tertiaryColor,
+    color: classes.secondaryColor,
     fontSize: 18,
     fontWeight: 'bold',
   },
