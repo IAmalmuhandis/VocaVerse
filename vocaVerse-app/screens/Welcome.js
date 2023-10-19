@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    top: 650, // Adjust the distance from the top as needed
+    top: 750, // Adjust the distance from the top as needed
     right: 100, // Adjust the distance from the right as needed
   },
 
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 32,
     borderRadius: 30,
+    marginTop: 20,
     shadowColor: 'rgba(74, 144, 226, 0.5)', // Shadow color for iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 1,
